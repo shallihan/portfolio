@@ -62,7 +62,7 @@ const IndexPage = () => {
           </p>
           <Enquiry>
             Email <Arrow />
-            mail@shaunahallihan.com
+            <a href="mailto:mail@shaunahallihan.com">mail@shaunahallihan.com</a>
           </Enquiry>
         </div>
       </main>
