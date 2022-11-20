@@ -4,7 +4,7 @@ import { Arrow } from "../assets/svgs";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 22px;
   }
   html, body {
@@ -16,10 +16,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     background: #DDDDDD;
     color: #333333;
-    @media (prefers-color-scheme: dark) {
-      background: #161519;
-      color: #DDDDDD;
-    }
   }
   h1, h2, h3, p, span {
     margin: 0;
@@ -27,8 +23,9 @@ export const GlobalStyles = createGlobalStyle`
     
   }
   h1 {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 22px;
+    font-weight: 200;
   }
   a {
       color: #828fff;
@@ -37,11 +34,33 @@ export const GlobalStyles = createGlobalStyle`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     div {
-      grid-column: 2 / span 6;
+      grid-column: 2 / 12;
       display: flex;
       flex-direction: column;
       gap: 21px;
-      margin: 4rem 0;
+      margin: 2rem 0;
+      max-width: 450px;
+    }
+  }
+  @media (min-width: 640px) {
+    main {
+      div {
+        margin: 3rem 0;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    main {
+      div {
+        margin: 4rem 0;
+      }
+    }
+
+  }
+  @media (prefers-color-scheme: dark) {
+    html, body {
+      background: #161519;
+      color: #DDDDDD;
     }
   }
 `;
@@ -54,11 +73,7 @@ const IndexPage = () => {
         <div>
           <h1>Shauna Hallihan</h1>
           <p>
-            Frontend developer{" "}
-            <a href="https://www.agencyx.ie" target={"_blank"}>
-              @agencyx
-            </a>{" "}
-            — building component driven digital products.
+            Frontend developer — building component driven digital products.
           </p>
           <Enquiry>
             Email <Arrow />
@@ -76,6 +91,17 @@ const Enquiry = styled.p`
   gap: 10px;
   svg {
     height: 10px;
+    width: auto;
+    path {
+      fill: #333333;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      path {
+        fill: #dddddd;
+      }
+    }
   }
 `;
 
